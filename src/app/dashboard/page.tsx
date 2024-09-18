@@ -11,11 +11,11 @@ const Dashboard: React.FC = () => {
     const [notifications, setNotifications] = useState<string[]>(['Notification 1', 'Notification 2']); // Example notifications
 
     // Sample data for demonstration
-    const data = {
+    const data: { [key: string]: string[] } = {
         dashboard: ['Dashboard Overview', 'Dashboard Stats'],
         tasks: ['Task 1', 'Task 2', 'Task 3', 'Add Tasks']
     };
-
+    
     const [searchResults, setSearchResults] = useState<string[]>([]);
 
     const handleSearch = () => {
