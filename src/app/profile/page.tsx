@@ -1,25 +1,35 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
-import { faBook } from '@fortawesome/free-solid-svg-icons';
+import { faBook, faImage } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
 
-const UserProfile = () => {
+interface User {
+    email: string;
+    phone: string;
+    website: string;
+    age: number;
+    course: string;
+    status: string;
+    work: string;
+}
+
+const UserProfile: React.FC = () => {
     // Default values
     const defaultName = "Guest User";
-    const defaultImage = "./images/defaultprofile.png";
+    const defaultImage = "/images/defaultprofile.png"; // Correct path
     const defaultStatus = "🔵 Available";
-  
+
     // State for user information
-    const [userName, setUserName] = useState("Jake J. Mayores (they/them)");
-    const [profileImage, setProfileImage] = useState(() => {
+    const [userName, setUserName] = useState<string>("Jake J. Mayores (they/them)");
+    const [profileImage, setProfileImage] = useState<string>(() => {
         return localStorage.getItem('profileImage') || defaultImage;
     });
-    const [userStatus, setUserStatus] = useState("🔴 Busy");
+    const [userStatus, setUserStatus] = useState<string>("🔴 Busy");
 
-    const [user, setUser] = useState({
+    const [user, setUser] = useState<User>({
         email: "jakemayores05@gmail.com",
         phone: "09701275112",
         website: "https://mayores04.github.io/Jake_Mayores/",
@@ -29,9 +39,9 @@ const UserProfile = () => {
         work: "No work information available."
     });
 
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
-    const handleLogout = () => {      
+    const handleLogout = () => {
         setUserName(defaultName);
         setProfileImage(defaultImage);
         setUserStatus(defaultStatus);
@@ -40,7 +50,7 @@ const UserProfile = () => {
             email: "",
             phone: "",
             website: "",
-            age: 0,  
+            age: 0,
             course: "",
             status: "",
             work: "No work information available."
@@ -50,7 +60,7 @@ const UserProfile = () => {
     const handleStatusChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const newStatus = event.target.value;
         setUserStatus(newStatus);
-        setUser((prevState) => ({ ...prevState, status: newStatus }));
+        setUser(prevState => ({ ...prevState, status: newStatus }));
     };
 
     const handleImageClick = () => {
@@ -104,11 +114,14 @@ const UserProfile = () => {
                                     <Image
                                         src={profileImage}
                                         alt="Profile"
-                                        width="24"
-                                        height="24"
+                                        width={96} // Specify width
+                                        height={96} // Specify height
                                         className="w-24 h-24 sm:w-32 sm:h-32 rounded-full border-2 border-gray-300 object-cover cursor-pointer"
-                                        onClick={handleImageClick}
+
                                     />
+                                    <button onClick={handleImageClick} className='-mt-10 ml-12 w-auto p-2 rounded-lg text-white hover:bg-slate-600 hover:shadow-lg transition duration-300 ease-in-out'>
+                                        <FontAwesomeIcon icon={faImage} size='xl'/>
+                                    </button>
                                     <button
                                         className='mt-4 w-auto p-2 rounded-lg bg-slate-500 text-white hover:bg-slate-600 hover:shadow-lg transition duration-300 ease-in-out'
                                         onClick={handleLogout}
@@ -168,6 +181,8 @@ const UserProfile = () => {
                         <Image
                             src={profileImage}
                             alt="Profile Zoomed"
+                            width={500} // Specify width
+                            height={500} // Specify height
                             className="w-full h-auto rounded-lg mb-4"
                         />
                         <input

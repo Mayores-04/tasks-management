@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/tasks'; // Ensure this URL is correct
+const API_URL = 'http://localhost:5000/api/tasks'; 
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     const token = req.headers.authorization as string | undefined;

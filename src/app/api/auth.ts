@@ -1,4 +1,4 @@
-import axios, { AxiosError } from 'axios'; // Import AxiosError
+import axios, { AxiosError } from 'axios'; 
 
 // Sign-Up function
 export const signUp = async (userData: { username: string; email: string; password: string }) => {

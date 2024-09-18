@@ -1,4 +1,4 @@
-// components/Footer.tsx
+"use client"
 import React from 'react';
 import styles from '../styles/Footer.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

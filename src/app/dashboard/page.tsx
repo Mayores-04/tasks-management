@@ -35,19 +35,15 @@ const Dashboard: React.FC = () => {
 
     return (
         <div className="flex">
-            {/* Sidebar */}
             <Sidebar />
 
-            {/* Main Content */}
             <main className="flex-1 overflow-y-auto h-screen p-4 bg-gray-100">
-                {/* Header */}
                 <header className="bg-white shadow-md p-4 rounded-md relative mb-4">
                     <div className="flex flex-col lg:flex-row items-center justify-between lg:justify-start">
                         <h1 className="text-2xl font-semibold text-gray-800 mb-4 lg:mb-0 lg:text-left w-full text-center lg:w-auto">
                             Dashboard
                         </h1>
                         <div className="flex space-x-4 lg:ml-auto relative">
-                            {/* Search Input */}
                             <div className="relative">
                                 <input
                                     type="text"
@@ -106,7 +102,6 @@ const Dashboard: React.FC = () => {
                                                         <span>{notification}</span>
                                                         <button
                                                             onClick={() => {
-                                                                // Update the notification list
                                                                 setNotifications(prev => prev.filter((_, i) => i !== index));
                                                             }}
                                                             className="ml-2 px-2 py-1 bg-red-500 text-white rounded"
