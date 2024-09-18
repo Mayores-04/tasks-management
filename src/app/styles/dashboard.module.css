@@ -1,0 +1,15 @@
+.dashboardContainer {
+    display: flex;
+}
+
+.mainContent {
+    margin-left: 250px; 
+    flex: 1;
+}
+
+.dashboardLayout {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Adjust spacing between sections */
+}
+

@@ -1,0 +1,356 @@
+
+
+/* Base Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: white;
+  border-bottom: 2px solid black;
+}
+
+.project-name {
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.project-name h1 {
+  margin: 0;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.welcomepage-main-container {
+  padding: 10px;
+  text-align: center;
+}
+
+.introduction-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.introduction-container h1 {
+  font-size: 3.2em;
+  margin-bottom: 8px;
+  margin-top: 0;
+  font-weight: 900;
+}
+
+.intro-image {
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+  border-radius: 15px;
+  border: solid black;
+}
+
+.intro-paragraph {
+  max-width: 700px;
+  font-size: 1.6em;
+  margin-bottom: 15px;
+}
+
+.try-now-button {
+  padding: 15px 30px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.try-now-button:hover {
+  background-color: #444;
+}
+
+
+
+.featureCard {
+  position: relative;
+  text-align: center;
+  width: 400px;
+  margin: 20px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.featureImage {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.featureCard:hover .featureImage {
+  transform: scale(1.2) rotate(3deg); 
+  transition: transform 0.3s ease-in-out;
+}
+
+
+
+.featureButton:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+
+.overview {
+  margin-top: 50px;
+}
+
+.overviewText {
+  margin-left: auto;
+  margin-right: auto;
+  width: 65em;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+  display: flex;
+}
+
+.overviewText h2 {
+  display: flex;
+  font-weight: 700;
+  font-size: 3.8em;
+  margin-bottom: 15px;
+}
+
+.overviewText p {
+  margin-top: 20px;
+  font-size: 1.5em; 
+  width: 40em;
+}
+
+.try-now-button {
+  padding: 15px 30px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.try-now-button:hover {
+  background-color: #444;
+}
+
+.tasks-page {
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.add-task {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.add-task input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.add-task button {
+  padding: 8px 12px;
+  margin-left: 10px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.task-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.task-list li.completed span {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.task-list button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .overview-text-container {
+    margin-left: 5em;
+    width: 100%;
+  }
+
+  .overview-text h2 {
+    font-size: 3em;
+  }
+
+  .intro-image {
+    max-width: 400px;
+    height: 250px;
+  }
+
+  .overview {
+    margin-top: 50px;
+  }
+  
+  .overviewText {
+    margin-left: auto;
+    margin-right: auto;
+    width: 40em;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+    display: flex;
+  }
+  
+  .overviewText h2 {
+    display: flex;
+    font-weight: 700;
+    font-size: 3.5em;
+    margin-bottom: 15px;
+  }
+  
+  .overviewText p {
+    margin-top: 20px;
+    font-size: 1.2em; 
+    width: 40em;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-name {
+    margin-bottom: 10px;
+  }
+
+  .auth-buttons {
+    justify-content: center;
+  }
+
+  .overview-text-container {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .introduction-container h1 {
+    font-size: 2em;
+  }
+
+  .intro-image {
+    max-width: 300px;
+    height: 200px;
+  }
+
+  .overview-text h2 {
+    font-size: 2em;
+    text-align: center;
+  }
+
+  .overview-link {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-card {
+    width: 100%;
+  }
+
+  .overview {
+    margin-top: 50px;
+  }
+  
+  .overviewText {
+    margin-left: auto;
+    margin-right: auto;
+    width: 25em;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+    display: flex;
+  }
+  
+  .overviewText h2 {
+    display: flex;
+    font-weight: 700;
+    font-size: 2em;
+    margin-bottom: 15px;
+  }
+  
+  .overviewText p {
+    margin-top: 20px;
+    font-size: 0.9em; 
+    width: 25em;
+  }
+}
+
+@media (max-width: 480px) {
+  .introduction-container h1 {
+    font-size: 2em;
+  }
+
+  .intro-paragraph {
+    font-size: 1.0em;
+  }
+
+  .overview-text h2 {
+    font-size: 1.7em;
+  }
+
+  .overview-text-container p {
+    font-size: 1.5em;
+  }
+
+  .try-now-button {
+    padding: 10px 20px;
+    font-size: 1em;
+  }
+
+  .signup-button, .signin-button {
+    padding: 8px 16px;
+    font-size: 1em;
+    height: auto;
+  }
+
+  .modal-content {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .close-button {
+    font-size: 20px;
+  }
+}
+

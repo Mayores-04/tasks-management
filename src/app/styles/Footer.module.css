@@ -1,0 +1,40 @@
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+}
+
+.footerContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    margin: auto;
+    position: relative;
+    width: 73%;
+}
+
+.footerLeft, .footerRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+
+.footerLeft {
+    margin-right: 2em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+.footerLogo {
+    margin-right: 1rem;
+}
+
+.socialMediaIcons a {
+    margin: 0 0.5rem;
+    color: #fff;
+    text-decoration: none;
+}

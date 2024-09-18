@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -16,18 +17,325 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+
+/* Base Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: white;
+  border-bottom: 2px solid black;
+}
+
+.project-name {
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.project-name h1 {
+  margin: 0;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.welcomepage-main-container {
+  padding: 10px;
+  text-align: center;
+}
+
+.introduction-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.introduction-container h1 {
+  font-size: 3.2em;
+  margin-bottom: 8px;
+  margin-top: 0;
+  font-weight: 900;
+}
+
+.intro-image {
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+  border-radius: 15px;
+  border: solid black;
+}
+
+.intro-paragraph {
+  max-width: 700px;
+  font-size: 1.6em;
+  margin-bottom: 15px;
+}
+
+.try-now-button {
+  padding: 15px 30px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.overview {
+  margin-top: 50px;
+}
+
+.overview-text {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.overview-text h2 {
+  font-size: 3.5em;
+  font-weight: 900;
+}
+
+.overview-text-container {
+  width: 900px;
+  text-align: left;
+  margin-left: 10em;
+  margin-right: auto;
+}
+
+.overview-text-container p {
+  font-size: 1.8em;
+}
+
+.overview-link {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+
+.feature-card {
+  text-align: center;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+  margin-top: 60px;
+}
+
+.feature-card {
+  top: 0;
+  transition: transform 0.3s ease-in-out;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card:first-child {
+  left: 0;
+  transform: rotate(-10deg);
+}
+
+.feature-card:last-child {
+  left: 50px;
+  transform: rotate(10deg);
+}
+
+.feature-image {
+  display: block;
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  border: solid black;
+}
+
+.feature-button {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+/* Hover effect to move the second card to its normal position */
+.feature-card:hover {
+  transform: rotate(0deg) translateX(50px);
+  z-index: 1;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .overview-text-container {
+    margin-left: 5em;
+    width: 100%;
+  }
+
+  .overview-text h2 {
+    font-size: 3em;
+  }
+
+  .intro-image {
+    max-width: 400px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-name {
+    margin-bottom: 10px;
+  }
+
+  .auth-buttons {
+    justify-content: center;
+  }
+
+  .overview-text-container {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .introduction-container h1 {
+    font-size: 2.5em;
+  }
+
+  .intro-image {
+    max-width: 300px;
+    height: 200px;
+  }
+
+  .overview-text h2 {
+    font-size: 2.5em;
+    text-align: center;
+  }
+
+  .overview-link {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .introduction-container h1 {
+    font-size: 2em;
+  }
+
+  .intro-paragraph {
+    font-size: 1.4em;
+  }
+
+  .overview-text h2 {
+    font-size: 2em;
+  }
+
+  .overview-text-container p {
+    font-size: 1.5em;
+  }
+
+  .try-now-button {
+    padding: 10px 20px;
+    font-size: 1em;
+  }
+
+  .signup-button, .signin-button {
+    padding: 8px 16px;
+    font-size: 1em;
+    height: auto;
+  }
+
+  .modal-content {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .close-button {
+    font-size: 20px;
+  }
+}
+
+
+.tasks-page {
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.add-task {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.add-task input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.add-task button {
+  padding: 8px 12px;
+  margin-left: 10px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.task-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.task-list li.completed span {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.task-list button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
 }
